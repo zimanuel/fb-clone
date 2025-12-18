@@ -19,11 +19,11 @@ export default async function Feed() {
       <Suspense fallback={<StorySkeleton />}>
         <Stories stories={_stories} />
       </Suspense>
-      <div className="mt-3  bg-white">
+      <div className="mt-3  bg-white rounded-2xl shadow-lg">
         <OriginalUserPost />
       </div>
 
-      <div className="mt-3  bg-white">
+      <div className="mt-3  bg-white rounded-2xl shadow-lg">
         <OriginalPagePost />
       </div>
     </div>

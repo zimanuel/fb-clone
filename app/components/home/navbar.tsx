@@ -7,7 +7,7 @@ export default function TopBar() {
       <div className="flex items-center space-x-2">
         <Image alt="Facebook" src={"/fb.png"} width={39} height={39} />
         <div className="p-2 flex grow items-center space-x-1.5 bg-zinc-100 rounded-4xl">
-          <CgSearch className="w-6 h-6" />
+          <CgSearch className="w-6 h-6 text-zinc-500" />
           <input type="text" className="grow border-none focus:outline-none" />
         </div>
       </div>

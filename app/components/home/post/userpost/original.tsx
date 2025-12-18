@@ -11,9 +11,7 @@ export default function OriginalUserPost() {
       <div className="h-128">
         <Medias />
       </div>
-      <div className="p-2">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
