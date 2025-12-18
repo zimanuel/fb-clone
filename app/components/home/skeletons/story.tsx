@@ -1,19 +1,100 @@
 export default function StorySkeleton() {
   return (
-    <>
-      <p className="text-xl font-bold mb-3">Stories</p>
-      <div className="flex items-center space-x-3">
-        <p className="w-20 bg-gray-200 rounded-xl h-4 animate-pulse"></p>
-        <p className="w-20 bg-gray-200 rounded-xl h-4 animate-pulse"></p>
-      </div>
-      <p className="font-bold mb-3 rounded-xl w-20 mt-3 h-4 bg-gray-200 animate-pulse"></p>
-      <div className="flex items-center space-x-3 mb-3">
-        <div className="w-12 h-12 rounded-full p-3 bg-gray-100 animate-pulse" />
-        <div className="flex flex-col space-y-3">
-          <p className="w-24 h-4 rounded-xl bg-gray-200 animate-pulse"></p>
-          <p className="w-28 h-4 bg-gray-200 rounded-xl animate-pulse"></p>
+    <div className="w-full h-52 flex space-x-2">
+      <div className="w-30 h-full bg-white p-1">
+        <div className="h-[70%] w-full">
+          <div className="flex space-x-1">
+            <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
+            <div className="flex flex-col grow space-y-1">
+              <div className="w-3/4 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+
+              <div className="w-3/5 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[30%] flex items-end">
+          <div className="w-full h-4 rounded-lg bg-zinc-50 animate-pulse"></div>
         </div>
       </div>
-    </>
+
+      <div className="w-30 h-full bg-white p-1">
+        <div className="h-[70%] w-full">
+          <div className="flex space-x-1">
+            <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
+            <div className="flex flex-col grow space-y-1">
+              <div className="w-3/4 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+
+              <div className="w-3/5 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[30%] flex items-end">
+          <div className="w-full h-4 rounded-lg bg-zinc-50 animate-pulse"></div>
+        </div>
+      </div>
+
+      <div className="w-30 h-full bg-white p-1">
+        <div className="h-[70%] w-full">
+          <div className="flex space-x-1">
+            <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
+            <div className="flex flex-col grow space-y-1">
+              <div className="w-3/4 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+
+              <div className="w-3/5 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[30%] flex items-end">
+          <div className="w-full h-4 rounded-lg bg-zinc-50 animate-pulse"></div>
+        </div>
+      </div>
+
+      <div className="w-30 h-full bg-white p-1">
+        <div className="h-[70%] w-full">
+          <div className="flex space-x-1">
+            <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
+            <div className="flex flex-col grow space-y-1">
+              <div className="w-3/4 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+
+              <div className="w-3/5 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[30%] flex items-end">
+          <div className="w-full h-4 rounded-lg bg-zinc-50 animate-pulse"></div>
+        </div>
+      </div>
+
+      <div className="w-30 h-full bg-white p-1">
+        <div className="h-[70%] w-full">
+          <div className="flex space-x-1">
+            <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
+            <div className="flex flex-col grow space-y-1">
+              <div className="w-3/4 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+
+              <div className="w-3/5 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[30%] flex items-end">
+          <div className="w-full h-4 rounded-lg bg-zinc-50 animate-pulse"></div>
+        </div>
+      </div>
+      <div className="w-30 h-full bg-white p-1">
+        <div className="h-[70%] w-full">
+          <div className="flex space-x-1">
+            <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
+            <div className="flex flex-col grow space-y-1">
+              <div className="w-3/4 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+
+              <div className="w-3/5 h-3 rounded-lg bg-zinc-50 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[30%] flex items-end">
+          <div className="w-full h-4 rounded-lg bg-zinc-50 animate-pulse"></div>
+        </div>
+      </div>
+    </div>
   );
 }
