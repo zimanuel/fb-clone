@@ -9,7 +9,7 @@ import GridFive from "./grid/five";
 import GridMore from "./grid/more";
 
 export default function Medias() {
-  const [mediaLength] = useState<number>(4);
+  const [mediaLength] = useState<number>(6);
   if (mediaLength === 1) {
     return <GridOne />;
   }

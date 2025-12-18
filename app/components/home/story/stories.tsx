@@ -29,7 +29,7 @@ export default function Stories({}: {
             height={0}
             sizes="100hv"
             alt="story"
-            className="w-full h-full rounded-lg object-cover border border-zinc-200 shadow-sm"
+            className="w-full h-full rounded-lg object-cover border"
           />
         </div>
       ))}

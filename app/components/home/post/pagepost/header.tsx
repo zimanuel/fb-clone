@@ -11,7 +11,7 @@ export default function Header() {
         className="w-10 h-10 rounded-full object-cover"
       />
       <div className="flex flex-col">
-        <p className="font-semibold">Amanuel Fered</p>
+        <p className="font-semibold">Ethiopian Artists</p>
         <p>3hrs</p>
       </div>
     </div>

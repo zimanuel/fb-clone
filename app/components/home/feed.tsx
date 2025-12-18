@@ -2,7 +2,8 @@ import { stories } from "@/app/seed/faker/story";
 import Stories from "./story/stories";
 import { Suspense } from "react";
 import StorySkeleton from "./skeletons/story";
-import OriginalPost from "./post/userpost/original";
+import OriginalUserPost from "./post/userpost/original";
+import OriginalPagePost from "./post/pagepost/original";
 
 export default async function Feed() {
   const _stories = await new Promise<
@@ -19,7 +20,11 @@ export default async function Feed() {
         <Stories stories={_stories} />
       </Suspense>
       <div className="mt-3  bg-white">
-        <OriginalPost />
+        <OriginalUserPost />
+      </div>
+
+      <div className="mt-3  bg-white">
+        <OriginalPagePost />
       </div>
     </div>
   );

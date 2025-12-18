@@ -3,7 +3,7 @@ import Medias from "../shared/medias";
 import Footer from "./footer";
 import Header from "./header";
 
-export default function OriginalUserPost() {
+export default function OriginalPagePost() {
   return (
     <div className="w-full">
       <Header />
@@ -11,9 +11,7 @@ export default function OriginalUserPost() {
       <div className="h-128">
         <Medias />
       </div>
-      <div className="p-2">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
