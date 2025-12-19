@@ -18,10 +18,9 @@ export default function StoriesClient({
     dots: false,
     infinite: false,
     variableWidth: true,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     arrows: false,
-    centerMode: true,
-    initialSlide: 1,
-    centerPadding: "0px",
   };
 
   const handelNext = () => {
