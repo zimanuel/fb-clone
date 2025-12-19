@@ -1,7 +1,7 @@
 export default function StorySkeleton() {
   return (
     <div className="w-full h-52 flex space-x-2">
-      <div className="w-30 h-full bg-white p-1">
+      <div className="w-30 rounded-xl h-full bg-white p-1">
         <div className="h-[70%] w-full">
           <div className="flex space-x-1">
             <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
@@ -17,7 +17,7 @@ export default function StorySkeleton() {
         </div>
       </div>
 
-      <div className="w-30 h-full bg-white p-1">
+      <div className="w-30 rounded-xl h-full bg-white p-1">
         <div className="h-[70%] w-full">
           <div className="flex space-x-1">
             <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
@@ -33,7 +33,7 @@ export default function StorySkeleton() {
         </div>
       </div>
 
-      <div className="w-30 h-full bg-white p-1">
+      <div className="w-30 rounded-xl h-full bg-white p-1">
         <div className="h-[70%] w-full">
           <div className="flex space-x-1">
             <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
@@ -49,7 +49,7 @@ export default function StorySkeleton() {
         </div>
       </div>
 
-      <div className="w-30 h-full bg-white p-1">
+      <div className="w-30 rounded-xl h-full bg-white p-1">
         <div className="h-[70%] w-full">
           <div className="flex space-x-1">
             <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
@@ -65,7 +65,7 @@ export default function StorySkeleton() {
         </div>
       </div>
 
-      <div className="w-30 h-full bg-white p-1">
+      <div className="w-30 rounded-xl h-full bg-white p-1">
         <div className="h-[70%] w-full">
           <div className="flex space-x-1">
             <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>
@@ -80,7 +80,7 @@ export default function StorySkeleton() {
           <div className="w-full h-4 rounded-lg bg-zinc-50 animate-pulse"></div>
         </div>
       </div>
-      <div className="w-30 h-full bg-white p-1">
+      <div className="w-30 rounded-xl h-full bg-white p-1">
         <div className="h-[70%] w-full">
           <div className="flex space-x-1">
             <div className="w-8 h-8 rounded-full bg-zinc-50 animate-pulse"></div>

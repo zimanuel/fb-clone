@@ -1,0 +1,32 @@
+import Image from "next/image";
+export default function Header() {
+  return (
+    <div className="flex space-x-2 pl-2.5 pt-2.5 mb-1.5">
+      <div className=" w-12 h-12 relative rounded-lg bg-amber-200">
+        <Image
+          src={`/users/19.jpg`}
+          alt="Amanuel Fered"
+          width={0}
+          height={0}
+          sizes="100vh"
+          className="w-full h-full brightness-80 rounded-lg object-cover"
+        />
+        <Image
+          src={`/users/14.jpg`}
+          alt="Amanuel Fered"
+          width={0}
+          height={0}
+          sizes="100vh"
+          className="absolute -right-1 -bottom-1 w-7 h-7 rounded-full object-cover border border-white"
+        />
+      </div>
+      <div className="flex flex-col">
+        <p className="font-semibold">Ethiopian Artists</p>
+        <div className="flex space-x-1">
+          <p>Amanuel Ferede</p>
+          <p>3hrs</p>
+        </div>
+      </div>
+    </div>
+  );
+}

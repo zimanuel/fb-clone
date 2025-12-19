@@ -1,15 +1,15 @@
-import PostContent from "../shared/content";
-import Medias from "../shared/medias";
+import PostContent from "../common/content";
+import Medias from "../common/medias";
 import Footer from "./footer";
 import Header from "./header";
 
-export default function OriginalPagePost() {
+export default function OriginalUserPost() {
   return (
     <div className="w-full">
       <Header />
       <PostContent />
       <div className="h-128">
-        <Medias />
+        <Medias type="original" />
       </div>
       <Footer />
     </div>

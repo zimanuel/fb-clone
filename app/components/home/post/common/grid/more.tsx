@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 
-export default function GridMore() {
-  const [random] = useState<number>(1);
+export default function GridMore({ type }: { type: "share" | "original" }) {
+  const [random] = useState<number>(0);
   if (random === 1) {
     return (
       <div className="w-full h-full">
@@ -11,7 +11,11 @@ export default function GridMore() {
             return (
               <div
                 key={index}
-                className="w-full h-full"
+                className={`w-full h-full ${
+                  type === "share" && index === 0
+                    ? "rounded-tl-xl"
+                    : "rounded-tr-xl"
+                }`}
                 style={{
                   backgroundImage: "url(" + `/users/${index + 3}.jpg` + ")",
                   backgroundPosition: "center",
@@ -67,7 +71,9 @@ export default function GridMore() {
           return (
             <div
               key={index}
-              className="w-full h-1/2"
+              className={`w-full h-1/2 ${
+                type === "share" && index === 0 ? "rounded-tl-xl" : ""
+              }`}
               style={{
                 backgroundImage: "url(" + `/users/${index + 1}.jpg` + ")",
                 backgroundPosition: "top center",
@@ -79,34 +85,22 @@ export default function GridMore() {
         })}
       </div>
       <div className="w-[40%] h-full flex flex-col space-y-1">
-        <div
-          className="h-1/3 w-full"
-          style={{
-            backgroundImage: "url(" + `/users/12.jpg` + ")",
-            backgroundPosition: "top center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-        <div
-          className="h-1/3 w-full"
-          style={{
-            backgroundImage: "url(" + `/users/4.jpg` + ")",
-            backgroundPosition: "top center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-
-        <div
-          className="h-1/3 w-full"
-          style={{
-            backgroundImage: "url(" + `/users/9.jpg` + ")",
-            backgroundPosition: "top center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
+        {Array.from({ length: 3 }, (el, index) => {
+          return (
+            <div
+              key={index}
+              className={`h-1/3 w-full ${
+                type === "share" ? "rounded-tr-xl" : ""
+              }`}
+              style={{
+                backgroundImage: "url(" + `/users/12.jpg` + ")",
+                backgroundPosition: "top center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+          );
+        })}
       </div>
     </div>
   );

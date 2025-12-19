@@ -1,4 +1,4 @@
-import Contacts from "./components/home/contacts";
+import Contacts from "./components/home/contacts/contacts";
 import Feed from "./components/home/feed";
 import SideBar from "./components/home/sidebar";
 export default function Home() {

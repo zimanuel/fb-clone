@@ -8,27 +8,27 @@ import GridFour from "./grid/four";
 import GridFive from "./grid/five";
 import GridMore from "./grid/more";
 
-export default function Medias() {
-  const [mediaLength] = useState<number>(6);
+export default function Medias({ type }: { type: "share" | "original" }) {
+  const [mediaLength] = useState<number>(4);
   if (mediaLength === 1) {
-    return <GridOne />;
+    return <GridOne type={type} />;
   }
 
   if (mediaLength === 2) {
-    return <GridTwo />;
+    return <GridTwo type={type} />;
   }
 
   if (mediaLength === 3) {
-    return <GridThree />;
+    return <GridThree type={type} />;
   }
 
   if (mediaLength === 4) {
-    return <GridFour />;
+    return <GridFour type={type} />;
   }
 
   if (mediaLength === 5) {
-    return <GridFive />;
+    return <GridFive type={type} />;
   }
 
-  return <GridMore />;
+  return <GridMore type={type} />;
 }
