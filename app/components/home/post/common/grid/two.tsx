@@ -1,6 +1,7 @@
+import Image from "next/image";
 export default function GridTwo({ type }: { type: "share" | "original" }) {
   return (
-    <div className="w-full h-full flex space-x-1">
+    <div className="w-full h-auto flex space-x-1">
       {Array.from({ length: 2 }, (el, index) => {
         return (
           <div
@@ -10,13 +11,16 @@ export default function GridTwo({ type }: { type: "share" | "original" }) {
                 ? "rounded-tl-xl"
                 : "rounded-tr-xl"
             }`}
-            style={{
-              backgroundImage: "url(" + `/users/${index + 1}.jpg` + ")",
-              backgroundPosition: "top center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></div>
+          >
+            <Image
+              src={`/users/${index + 2}.jpg`}
+              alt="user"
+              width={0}
+              height={0}
+              sizes="100vh"
+              className="w-full h-full object-cover"
+            />
+          </div>
         );
       })}
     </div>

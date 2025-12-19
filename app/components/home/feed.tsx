@@ -41,7 +41,7 @@ export default async function Feed() {
       <div className="mt-3  bg-white rounded-2xl shadow-lg">
         <ToGroupSharePost />
       </div>
-      <PostModal />
+      {/* <PostModal /> */}
     </div>
   );
 }

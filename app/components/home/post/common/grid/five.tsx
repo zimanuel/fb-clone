@@ -33,7 +33,7 @@ export default function GridFive({ type }: { type: "share" | "original" }) {
             return (
               <div
                 key={index}
-                className={`w-full h-full`}
+                className={`grow h-full`}
                 style={{
                   backgroundImage: "url(" + `/users/${index + 1}.jpg` + ")",
                   backgroundPosition: "center",

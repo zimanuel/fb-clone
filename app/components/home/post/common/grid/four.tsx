@@ -16,7 +16,7 @@ export default function GridFour({ type }: { type: "share" | "original" }) {
                 key={index}
                 style={{
                   backgroundImage: "url(" + `/users/${index + 1}.jpg` + ")",
-                  backgroundPosition: "center",
+                  backgroundPosition: "top center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
@@ -32,7 +32,7 @@ export default function GridFour({ type }: { type: "share" | "original" }) {
                 key={index}
                 style={{
                   backgroundImage: "url(" + `/users/${index + 2}.jpg` + ")",
-                  backgroundPosition: "center",
+                  backgroundPosition: "top center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
@@ -49,8 +49,8 @@ export default function GridFour({ type }: { type: "share" | "original" }) {
       <div
         className={`w-[60%] h-full ${type === "share" ? "rounded-tl-xl" : ""}`}
         style={{
-          backgroundImage: "url(" + `/users/6.jpg` + ")",
-          backgroundPosition: "center",
+          backgroundImage: "url(" + `/users/16.jpg` + ")",
+          backgroundPosition: "top center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -64,8 +64,8 @@ export default function GridFour({ type }: { type: "share" | "original" }) {
                 type === "share" && index === 0 ? "rounded-tr-xl" : ""
               }`}
               style={{
-                backgroundImage: "url(" + `/users/${index + 7}.jpg` + ")",
-                backgroundPosition: "center",
+                backgroundImage: "url(" + `/users/${index + 20}.jpg` + ")",
+                backgroundPosition: "top center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
               }}
