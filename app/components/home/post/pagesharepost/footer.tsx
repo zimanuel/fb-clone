@@ -32,11 +32,10 @@ export default function Footer() {
 
       <div className=" flex items-center justify-between px-2 pb-1.5">
         <div className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50">
-          <p>Like</p>
           <Image alt="like" src={`/post/like.png`} width={20} height={20} />
+          <p>Like</p>
         </div>
         <div className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50">
-          <p>Comment</p>
           <Image
             alt="comment"
             src={`/post/comment.png`}
@@ -44,9 +43,9 @@ export default function Footer() {
             height={20}
             className="object-cover"
           />
+          <p>Comment</p>
         </div>
         <div className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50">
-          <p>Share</p>
           <Image
             alt="share"
             src={`/post/share.png`}
@@ -54,6 +53,7 @@ export default function Footer() {
             width={20}
             height={20}
           />
+          <p>Share</p>
         </div>
       </div>
     </>
