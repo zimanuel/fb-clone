@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function GridFour({ type }: { type: "share" | "original" }) {
-  const [random] = useState<number>(1);
+  const [random] = useState<number>(0);
 
   if (random === 1) {
     return (
@@ -11,7 +11,9 @@ export default function GridFour({ type }: { type: "share" | "original" }) {
             return (
               <div
                 className={`w-full h-full ${
-                  index === 0 && type === "share" ? "rounded-tl-xl" : ""
+                  index === 0 && type === "share"
+                    ? "rounded-tl-xl"
+                    : "rounded-tr-xl"
                 }`}
                 key={index}
                 style={{
