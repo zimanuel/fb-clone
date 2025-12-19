@@ -8,6 +8,7 @@ import PageSharePost from "./post/pagesharepost/post";
 import OriginalGroupPost from "./post/grouppost/post";
 import ToGroupSharePost from "./post/togroupsharepost/post";
 import AddPost from "./addpost/addpost";
+import PostModal from "./postmodal/postmodal";
 
 export default async function Feed() {
   return (
@@ -40,6 +41,7 @@ export default async function Feed() {
       <div className="mt-3  bg-white rounded-2xl shadow-lg">
         <ToGroupSharePost />
       </div>
+      <PostModal />
     </div>
   );
 }
