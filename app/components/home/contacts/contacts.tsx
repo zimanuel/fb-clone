@@ -13,7 +13,7 @@ export default function Contacts() {
     >
       <div
         className={`overflow-y-auto pt-8 pb-12 pl-12 h-full ${
-          showScrollBar ? "custom-scrollbar" : "no-scrollbar"
+          showScrollBar ? "custom-scrollbar" : "custom-scrollbar-hidden"
         }  `}
       >
         {" "}

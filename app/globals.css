@@ -59,27 +59,16 @@ body {
 
 
   /**/
+.custom-scrollbar {
+   scrollbar-width: 9px;
+}
 
-  .no-scrollbar::-webkit-scrollbar {
-    width: 0px; /* Width of the vertical scrollbar */
-  }
-  .no-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the track */
-    border-radius: 100vh;
-  }
-  .no-scrollbar::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar thumb */
-    border-radius: 100vh;
-  }
-  .no-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color on hover */
-  }
-  /* For Firefox support (basic color and width only) */
-  .no-scrollbar {
-    scrollbar-width: none;
-    scrollbar-color: #888 #f1f1f1;
-   
-  }
+.custom-scrollbar-hidden {
+   scrollbar-width: none
+}
+ 
+  
+  
 
 
 

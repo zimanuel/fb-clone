@@ -105,7 +105,7 @@ export default function PostModal() {
 
           <div
             className={`max-h-42 overflow-y-auto transition-all duration-1000 ease-in-out  ${
-              showScrollBar ? "custom-scrollbar" : "no-scrollbar"
+              showScrollBar ? "custom-scrollbar" : "custom-scrollbar-hidden"
             } `}
             onMouseOver={() => setShowScrollBar(true)}
             onMouseLeave={() => setShowScrollBar(false)}
