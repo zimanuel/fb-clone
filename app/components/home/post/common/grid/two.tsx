@@ -16,7 +16,7 @@ export default function GridTwo({
           <div
             key={media.id}
             className={`w-1/2 h-full ${
-              type === "share" ? "rounded-tl-xl" : ""
+              type === "share" ? "rounded-tl-xl" : "rounded-tr-xl"
             }`}
             style={{
               backgroundImage: "url(" + `${media.url}` + ")",

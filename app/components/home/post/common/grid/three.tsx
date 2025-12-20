@@ -33,7 +33,7 @@ export default function GridThree({
             return (
               <div
                 key={media.id}
-                className={`h-1/2 w-full ${
+                className={`h-1/2 grow ${
                   type === "share" && index === 0 ? "rounded-tr-xl" : ""
                 }`}
                 style={{
@@ -68,7 +68,7 @@ export default function GridThree({
           return (
             <div
               key={media.id}
-              className={`h-full grow w-full`}
+              className={`h-full grow`}
               style={{
                 backgroundImage: "url(" + `${media.url}` + ")",
                 backgroundPosition: "top center",

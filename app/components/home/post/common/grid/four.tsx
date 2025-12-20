@@ -11,14 +11,14 @@ export default function GridFour({
     type: string;
   }[];
 }) {
-  const [random] = useState<number>(0);
+  const [random] = useState<number>(1);
 
   if (random === 1) {
     return (
       <div className="w-full h-full flex space-x-1">
         <div className="w-[60%]  h-full">
           <div
-            className={`w-full h-full`}
+            className={`w-full h-full rounded-tl-xl`}
             style={{
               backgroundImage: "url(" + `${medias[0].url}` + ")",
               backgroundPosition: "top center",
@@ -28,10 +28,12 @@ export default function GridFour({
           ></div>
         </div>
         <div className="w-[40%]  h-full flex flex-col space-y-1">
-          {medias.slice(1, medias.length).map((media) => {
+          {medias.slice(1, medias.length).map((media, index) => {
             return (
               <div
-                className="w-full grow"
+                className={`w-full grow ${
+                  type === "share" && index === 0 ? "rounded-tr-xl" : ""
+                }`}
                 key={media.id}
                 style={{
                   backgroundImage: "url(" + `${media.url}` + ")",
@@ -50,12 +52,14 @@ export default function GridFour({
   return (
     <div className="w-full h-full flex flex-col space-y-1">
       <div className="h-1/2 w-full flex space-x-1">
-        {medias.slice(0, 2).map((media) => {
+        {medias.slice(0, 2).map((media, index) => {
           return (
             <div
               key={media.id}
               className={`w-full h-full ${
-                type === "share" ? "rounded-tl-xl" : ""
+                type === "share" && index === 0
+                  ? "rounded-tl-xl"
+                  : "rounded-tr-xl"
               }`}
               style={{
                 backgroundImage: "url(" + `${media.url}` + ")",
@@ -73,9 +77,7 @@ export default function GridFour({
           return (
             <div
               key={media.id}
-              className={`w-full h-full ${
-                type === "share" ? "rounded-tl-xl" : ""
-              }`}
+              className={`w-full h-full`}
               style={{
                 backgroundImage: "url(" + `${media.url}` + ")",
                 backgroundPosition: "top center",

@@ -18,11 +18,15 @@ export default function GridMore({
     return (
       <div className="w-full h-full flex flex-col space-y-1">
         <div className="w-full h-1/2 flex space-x-1 mt-1">
-          {medias.slice(0, 2).map((media) => {
+          {medias.slice(0, 2).map((media, index) => {
             return (
               <div
                 key={media.id}
-                className={`grow h-full`}
+                className={`h-full grow ${
+                  type === "share" && index === 0
+                    ? "rounded-tl-xl"
+                    : "rounded-tr-xl"
+                }`}
                 style={{
                   backgroundImage: "url(" + `${media.url}` + ")",
                   backgroundPosition: "top center",
@@ -39,7 +43,9 @@ export default function GridMore({
             return (
               <div
                 key={media.id}
-                className={`grow h-full relative`}
+                className={`h-full grow ${
+                  type === "share" && index === 0 ? "rounded-tr-xl" : ""
+                }`}
                 style={{
                   backgroundImage: "url(" + `${media.url}` + ")",
                   backgroundPosition: "top center",
@@ -65,12 +71,14 @@ export default function GridMore({
   return (
     <div className="w-full h-full flex space-x-1 rounded-xl">
       <div className="w-1/2 h-full flex flex-col space-y-1">
-        {medias.slice(0, 2).map((media) => {
+        {medias.slice(0, 2).map((media, index) => {
           return (
             <div
               key={media.id}
-              className={`h-1/2 w-full grow relative ${
-                type === "share" && media.id === 0 ? "rounded-tr-xl" : ""
+              className={`h-1/2  grow ${
+                type === "share" && index === 0
+                  ? "rounded-tl-xl"
+                  : "rounded-tr-xl"
               }`}
               style={{
                 backgroundImage: "url(" + `${media.url}` + ")",
@@ -88,8 +96,8 @@ export default function GridMore({
           return (
             <div
               key={media.id}
-              className={`h-1/3 w-full grow relative ${
-                type === "share" && media.id === 0 ? "rounded-tr-xl" : ""
+              className={`h-1/3 grow ${
+                type === "share" && index === 0 ? "rounded-tr-xl" : ""
               }`}
               style={{
                 backgroundImage: "url(" + `${media.url}` + ")",
