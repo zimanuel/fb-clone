@@ -17,7 +17,7 @@ export default function Contacts() {
         }  `}
       >
         {" "}
-        <p className="my-1 font-semibold">Birthdays</p>
+        <p className="my-1.5 font-semibold">Birthdays</p>
         <div className="flex space-x-1.5">
           <Image
             src={"/sidebar/gift.png"}
