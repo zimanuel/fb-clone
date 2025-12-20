@@ -1,8 +1,59 @@
+"use client";
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { setPostConent, setUploadedMedias } from "@/app/store/slices/addpost";
 import Image from "next/image";
+import { ChangeEvent, useRef } from "react";
 import { BiSmile } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
+import Medias from "../post/common/medias";
 
 export default function PostModal() {
+  const dispatch = useAppDispatch();
+  const uploadedMedias = useAppSelector((state) => state.addPost.uploadedFiles);
+  const input = useRef<HTMLInputElement>(null);
+
+  const showFileChooser = () => {
+    input.current?.click();
+  };
+
+  const onChangePostContent = (
+    e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    dispatch(setPostConent(e.target.value));
+  };
+
+  const onChangeFile = (e: ChangeEvent<HTMLInputElement>) => {
+    if (window.FileReader) {
+      const files = e.target.files;
+
+      if (files) {
+        let id: number;
+        for (const x in files) {
+          id = 0;
+          const file = files[x];
+
+          if (file) {
+            const fr = new FileReader();
+            fr.onloadend = () => {
+              dispatch(
+                setUploadedMedias({
+                  id: id++,
+                  url: fr.result as string,
+                  type: file.type,
+                })
+              );
+            };
+            try {
+              fr.readAsDataURL(file);
+            } catch {}
+          }
+        }
+      }
+      //console.log(files![0]);
+    } else {
+      alert("file reader not supported");
+    }
+  };
   return (
     <div className="fixed bg-zinc-100/80 top-0 left-0 right-0 bottom-0 z-50">
       <div className="max-w-125 bg-white mx-auto mt-24 shadow-lg rounded-xl">
@@ -37,8 +88,19 @@ export default function PostModal() {
               </button>
             </div>
           </div>
-          <div className="max-h-44">
-            <textarea className="block resize-none focus:outline-none w-full field-sizing-content px-3 py-2 min-h-24 max-h-44" />
+          <div className="max-h-44 relative">
+            <textarea
+              className={`block resize-none focus:outline-none w-full field-sizing-content px-3 py-2  max-h-44 ${
+                uploadedMedias.length > 0 ? "min-h-8" : "min-h-24"
+              }`}
+              onChange={onChangePostContent}
+            />
+            {uploadedMedias.length > 0 && (
+              <BiSmile className="w-8 h-8 text-zinc-400 absolute left-2 top-2" />
+            )}
+            <div className="h-96">
+              <Medias medias={uploadedMedias} />
+            </div>
           </div>
           <div className="flex justify-between my-2 py-2">
             <div className="w-9 h-9 rounded-lg bg-linear-to-tl bg-lime-500"></div>
@@ -47,7 +109,16 @@ export default function PostModal() {
           <div className="flex items-center justify-between space-x-2 my-2 py-3 px-4 rounded-xl border-2 border-gray-200">
             <p className="font-semibold">Add to your post</p>
             <div className="flex space-x-4">
+              <input
+                ref={input}
+                name="photos"
+                multiple
+                type="file"
+                onChange={onChangeFile}
+                className="relative hidden"
+              ></input>
               <Image
+                onClick={showFileChooser}
                 src={`/addpost/photos.png`}
                 alt="User"
                 width={0}

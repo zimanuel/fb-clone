@@ -1,24 +1,31 @@
 "use client";
 import { useState } from "react";
 
-export default function GridMore({ type }: { type: "share" | "original" }) {
+export default function GridMore({
+  type,
+  medias,
+}: {
+  type?: "share" | "original";
+  medias: {
+    id: number;
+    url: string;
+    type: string;
+  }[];
+}) {
   const [random] = useState<number>(0);
+
   if (random === 1) {
     return (
-      <div className="w-full h-full">
-        <div className="w-full h-1/2 flex space-x-1">
-          {Array.from({ length: 2 }, (el, index) => {
+      <div className="w-full h-full flex flex-col space-y-1">
+        <div className="w-full h-1/2 flex space-x-1 mt-1">
+          {medias.slice(0, 2).map((media) => {
             return (
               <div
-                key={index}
-                className={`w-full h-full ${
-                  type === "share" && index === 0
-                    ? "rounded-tl-xl"
-                    : "rounded-tr-xl"
-                }`}
+                key={media.id}
+                className={`grow h-full`}
                 style={{
-                  backgroundImage: "url(" + `/users/${index + 3}.jpg` + ")",
-                  backgroundPosition: "center",
+                  backgroundImage: "url(" + `${media.url}` + ")",
+                  backgroundPosition: "top center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
@@ -27,36 +34,27 @@ export default function GridMore({ type }: { type: "share" | "original" }) {
           })}
         </div>
 
-        <div className="w-full h-1/2 flex space-x-1 mt-1">
-          {Array.from({ length: 3 }, (el, index) => {
-            if (index === 2) {
-              return (
-                <div
-                  key={index}
-                  className="w-full h-full relative flex items-center justify-center"
-                  style={{
-                    backgroundImage: "url(" + `/users/${index + 1}.jpg` + ")",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <p className="absolute bg-white z-10 ">3+ Moreffffff</p>
-                </div>
-              );
-            }
-
+        <div className="w-full h-1/2 flex space-x-1">
+          {medias.slice(2, 5).map((media, index) => {
             return (
               <div
-                key={index}
-                className="w-full h-full"
+                key={media.id}
+                className={`grow h-full relative`}
                 style={{
-                  backgroundImage: "url(" + `/users/${index + 1}.jpg` + ")",
-                  backgroundPosition: "center",
+                  backgroundImage: "url(" + `${media.url}` + ")",
+                  backgroundPosition: "top center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
-              ></div>
+              >
+                {index === 2 && (
+                  <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-center bg-black/50">
+                    <p className="text-4xl font-semibold text-white">
+                      {medias.length - 5}+
+                    </p>
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
@@ -65,17 +63,17 @@ export default function GridMore({ type }: { type: "share" | "original" }) {
   }
 
   return (
-    <div className="w-full h-full flex space-x-1">
-      <div className="w-[60%] h-full flex flex-col space-y-1">
-        {Array.from({ length: 2 }, (el, index) => {
+    <div className="w-full h-full flex space-x-1 rounded-xl">
+      <div className="w-1/2 h-full flex flex-col space-y-1">
+        {medias.slice(0, 2).map((media) => {
           return (
             <div
-              key={index}
-              className={`w-full h-1/2 ${
-                type === "share" && index === 0 ? "rounded-tl-xl" : ""
+              key={media.id}
+              className={`h-1/2 w-full grow relative ${
+                type === "share" && media.id === 0 ? "rounded-tr-xl" : ""
               }`}
               style={{
-                backgroundImage: "url(" + `/users/${index + 1}.jpg` + ")",
+                backgroundImage: "url(" + `${media.url}` + ")",
                 backgroundPosition: "top center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
@@ -84,21 +82,30 @@ export default function GridMore({ type }: { type: "share" | "original" }) {
           );
         })}
       </div>
-      <div className="w-[40%] h-full flex flex-col space-y-1">
-        {Array.from({ length: 3 }, (el, index) => {
+
+      <div className="w-1/2 h-full flex flex-col space-y-1">
+        {medias.slice(2, 5).map((media, index) => {
           return (
             <div
-              key={index}
-              className={`h-1/3 w-full ${
-                type === "share" ? "rounded-tr-xl" : ""
+              key={media.id}
+              className={`h-1/3 w-full grow relative ${
+                type === "share" && media.id === 0 ? "rounded-tr-xl" : ""
               }`}
               style={{
-                backgroundImage: "url(" + `/users/12.jpg` + ")",
+                backgroundImage: "url(" + `${media.url}` + ")",
                 backgroundPosition: "top center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
               }}
-            ></div>
+            >
+              {index === 2 && (
+                <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-center bg-black/50">
+                  <p className="text-4xl font-semibold text-white">
+                    {medias.length - 5}+
+                  </p>
+                </div>
+              )}
+            </div>
           );
         })}
       </div>

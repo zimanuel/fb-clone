@@ -1,26 +1,29 @@
-import Image from "next/image";
-export default function GridTwo({ type }: { type: "share" | "original" }) {
+export default function GridTwo({
+  type,
+  medias,
+}: {
+  type?: "share" | "original";
+  medias: {
+    id: number;
+    url: string;
+    type: string;
+  }[];
+}) {
   return (
-    <div className="w-full h-auto flex space-x-1">
-      {Array.from({ length: 2 }, (el, index) => {
+    <div className="w-full h-full flex space-x-1">
+      {medias.map((media) => {
         return (
           <div
-            key={index}
-            className={`h-1/2 w-full ${
-              type === "share" && index === 0
-                ? "rounded-tl-xl"
-                : "rounded-tr-xl"
+            key={media.id}
+            className={`w-1/2 h-full ${
+              type === "share" ? "rounded-tl-xl" : ""
             }`}
-          >
-            <Image
-              src={`/users/${index + 2}.jpg`}
-              alt="user"
-              width={0}
-              height={0}
-              sizes="100vh"
-              className="w-full h-full object-cover"
-            />
-          </div>
+            style={{
+              backgroundImage: "url(" + `${media.url}` + ")",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
         );
       })}
     </div>

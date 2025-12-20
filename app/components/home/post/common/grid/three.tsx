@@ -2,8 +2,18 @@
 
 import { useState } from "react";
 
-export default function GridThree({ type }: { type: "share" | "original" }) {
-  const [random] = useState<number>(1);
+export default function GridThree({
+  type,
+  medias,
+}: {
+  type?: "share" | "original";
+  medias: {
+    id: number;
+    url: string;
+    type: string;
+  }[];
+}) {
+  const [random] = useState<number>(0);
 
   if (random === 0) {
     return (
@@ -13,21 +23,21 @@ export default function GridThree({ type }: { type: "share" | "original" }) {
             type === "share" ? "rounded-tl-xl" : ""
           }`}
           style={{
-            backgroundImage: "url(" + `/users/6.jpg` + ")",
+            backgroundImage: "url(" + `${medias[0].url}` + ")",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className="w-[40%] h-full flex flex-col space-y-1">
-          {Array.from({ length: 2 }, (el, index) => {
+          {medias.slice(1, medias.length).map((media, index) => {
             return (
               <div
-                key={index}
+                key={media.id}
                 className={`h-1/2 w-full ${
                   type === "share" && index === 0 ? "rounded-tr-xl" : ""
                 }`}
                 style={{
-                  backgroundImage: "url(" + `/users/${index + 4}.jpg` + ")",
+                  backgroundImage: "url(" + `${media.url}` + ")",
                   backgroundPosition: "top center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
@@ -41,24 +51,26 @@ export default function GridThree({ type }: { type: "share" | "original" }) {
   }
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full flex flex-col space-y-1">
       <div
-        className={`h-[60%] w-full ${type === "share" ? "rounded-tl-xl" : ""}`}
+        className={`h-1/2 w-full ${
+          type === "share" ? "rounded-tl-xl rounded-tr-xl" : ""
+        }`}
         style={{
-          backgroundImage: "url(" + `/users/6.jpg` + ")",
+          backgroundImage: "url(" + `${medias[0].url}` + ")",
           backgroundPosition: "center center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       ></div>
-      <div className="h-[40%] w-full flex space-x-1">
-        {Array.from({ length: 2 }, (el, index) => {
+      <div className="h-1/2 w-full flex space-x-1">
+        {medias.slice(1, medias.length).map((media) => {
           return (
             <div
-              key={index}
-              className={`w-1/2 h-full`}
+              key={media.id}
+              className={`h-full grow w-full`}
               style={{
-                backgroundImage: "url(" + `/users/${index + 1}.jpg` + ")",
+                backgroundImage: "url(" + `${media.url}` + ")",
                 backgroundPosition: "top center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",

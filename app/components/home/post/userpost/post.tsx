@@ -1,3 +1,4 @@
+import { medias } from "@/app/seed/faker/medias";
 import PostContent from "../common/content";
 import Medias from "../common/medias";
 import Footer from "./footer";
@@ -9,7 +10,7 @@ export default function OriginalUserPost() {
       <Header />
       <PostContent />
       <div className="h-128">
-        <Medias type="original" />
+        <Medias type="original" medias={medias} />
       </div>
       <Footer />
     </div>
