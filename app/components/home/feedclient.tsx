@@ -13,27 +13,27 @@ export default function FeedsClient() {
   const isAddPostModalOpened = useAppSelector((state) => state.addPost.isOpen);
   return (
     <>
-      <div className="mt-3  bg-white rounded-2xl shadow-lg">
+      <div className="mt-3  bg-white rounded-2xl shadow-md">
         <OriginalUserPost />
       </div>
 
-      <div className="mt-3  bg-white rounded-2xl shadow-lg">
+      <div className="mt-3  bg-white rounded-2xl shadow-md">
         <OriginalPagePost />
       </div>
 
-      <div className="mt-3  bg-white rounded-2xl shadow-lg">
+      <div className="mt-3  bg-white rounded-2xl shadow-md">
         <OriginalGroupPost />
       </div>
 
-      <div className="mt-3  bg-white rounded-2xl shadow-lg">
+      <div className="mt-3  bg-white rounded-2xl shadow-md">
         <UserSharePost />
       </div>
 
-      <div className="mt-3  bg-white rounded-2xl shadow-lg">
+      <div className="mt-3  bg-white rounded-2xl shadow-md">
         <PageSharePost />
       </div>
 
-      <div className="mt-3  bg-white rounded-2xl shadow-lg">
+      <div className="mt-3  bg-white rounded-2xl shadow-md">
         <ToGroupSharePost />
       </div>
       {isAddPostModalOpened && <PostModal />}

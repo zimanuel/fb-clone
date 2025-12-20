@@ -18,7 +18,9 @@ export default function GridFour({
       <div className="w-full h-full flex space-x-1">
         <div className="w-[60%]  h-full">
           <div
-            className={`w-full h-full rounded-tl-xl`}
+            className={`w-full h-full grow ${
+              type === "share" ? "rounded-tl-xl" : ""
+            }`}
             style={{
               backgroundImage: "url(" + `${medias[0].url}` + ")",
               backgroundPosition: "top center",
