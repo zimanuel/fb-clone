@@ -104,14 +104,18 @@ export default function PostModal() {
           </div>
 
           <div
-            className={`max-h-42 overflow-y-auto transition-all duration-1000 ease-in-out  ${
+            className={`max-h-42 overflow-y-auto x  ${
               showScrollBar ? "custom-scrollbar" : "custom-scrollbar-hidden"
             } `}
             onMouseOver={() => setShowScrollBar(true)}
             onMouseLeave={() => setShowScrollBar(false)}
           >
             <textarea
-              className={`block py-3 resize-none focus:outline-none w-full field-sizing-content  max-h-auto ${
+              className={`${
+                postContent.length < 150 && uploadedMedias.length === 0
+                  ? "text-2xl"
+                  : ""
+              } block py-3 resize-none focus:outline-none w-full field-sizing-content  max-h-auto ${
                 uploadedMedias.length > 0 ? "min-h-10" : "min-h-24 "
               }`}
               placeholder="What on your mind, Amanuel?"
@@ -141,8 +145,20 @@ export default function PostModal() {
             )}
           </div>
           <div className="flex justify-between my-2 py-2">
-            <div className="w-9 h-9 rounded-lg bg-linear-to-tl bg-lime-500"></div>
-            <BiSmile className="w-8 h-8 text-zinc-400" />
+            {postContent.length < 150 && uploadedMedias.length === 0 && (
+              <>
+                <div
+                  className={`w-9 h-9 rounded-lg bg-linear-to-tl bg-lime-500`}
+                ></div>
+                <BiSmile className="w-8 h-8 text-zinc-400" />
+              </>
+            )}
+            {postContent.length > 150 && uploadedMedias.length === 0 && (
+              <>
+                <div>{""}</div>
+                <BiSmile className="w-8 h-8 text-zinc-400" />
+              </>
+            )}
           </div>
           <div className="flex items-center justify-between space-x-2 my-2 py-3 px-4 rounded-xl border-2 border-gray-200">
             <p className="font-semibold">Add to your post</p>
