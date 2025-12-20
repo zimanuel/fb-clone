@@ -19,7 +19,7 @@ export default function AddPost() {
       />
 
       <input
-        onChange={showAddPostModal}
+        onClick={showAddPostModal}
         className="grow bg-gray-100 py-2 px-3 cursor-pointer border-none outline-none focus:outline-none border-2 border-zinc-300 rounded-3xl placeholder:text-lg font-semibold"
         placeholder="What on your mind, Amanuel?"
       />

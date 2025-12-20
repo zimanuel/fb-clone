@@ -24,6 +24,10 @@ export const addPostSlice = createSlice({
       state.isOpen = action.payload;
     },
 
+    removeUploadedMedias: (state) => {
+      state.uploadedFiles = [];
+    },
+
     setUploadedMedias: (
       state,
       action: PayloadAction<{
@@ -41,7 +45,11 @@ export const addPostSlice = createSlice({
   },
 });
 
-export const { openAddPostModal, setUploadedMedias, setPostConent } =
-  addPostSlice.actions;
+export const {
+  openAddPostModal,
+  setUploadedMedias,
+  setPostConent,
+  removeUploadedMedias,
+} = addPostSlice.actions;
 
 export default addPostSlice.reducer;
