@@ -20,7 +20,7 @@ export default function AddPost() {
 
       <input
         onClick={showAddPostModal}
-        className="grow bg-gray-100 py-2 px-3 cursor-pointer border-none outline-none focus:outline-none border-2 border-zinc-300 rounded-3xl placeholder:text-lg font-semibold"
+        className="grow bg-gray-100 py-2 px-3 cursor-pointer border-none outline-none focus:outline-none border-2 border-zinc-300 rounded-2xl placeholder:text-lg"
         placeholder="What on your mind, Amanuel?"
       />
       <div className="flex space-x-1">

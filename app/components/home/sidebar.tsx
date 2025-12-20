@@ -1,9 +1,20 @@
+"use client";
 import { sideBarData } from "@/app/seed/faker/sidebar";
 import Image from "next/image";
+import { useState } from "react";
 export default function SideBar() {
+  const [showScrollBar, setShowScrollBar] = useState<boolean>(false);
   return (
-    <div className="md:w-[23.5%] w-full pt-12  h-full fixed top-0 left-0 bottom-0 z-30 ">
-      <div className="overflow-y-auto pt-8 pb-12 pl-5   h-full">
+    <div
+      className={`md:w-[23.5%] w-full pt-12  h-full fixed top-0 left-0 bottom-0 z-30 `}
+      onMouseOver={() => setShowScrollBar(true)}
+      onMouseLeave={() => setShowScrollBar(false)}
+    >
+      <div
+        className={`overflow-y-auto pt-8 pb-12 pl-5 h-full ${
+          showScrollBar ? "custom-scrollbar" : "no-scrollbar"
+        }  `}
+      >
         {sideBarData.map((data, index) => (
           <div
             key={index}

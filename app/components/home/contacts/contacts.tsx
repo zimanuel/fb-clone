@@ -1,9 +1,22 @@
+"use client";
 import { users } from "@/app/seed/faker/user";
 import Image from "next/image";
+import { useState } from "react";
 export default function Contacts() {
+  const [showScrollBar, setShowScrollBar] = useState<boolean>(false);
+
   return (
-    <div className="md:w-[23.5%] w-full pt-12  h-full fixed top-0 right-0 bottom-0 z-30 ">
-      <div className="overflow-y-auto pt-8 pb-12 pl-12   h-full ">
+    <div
+      className="md:w-[23.5%] w-full pt-12  h-full fixed top-0 right-0 bottom-0 z-30 "
+      onMouseOver={() => setShowScrollBar(true)}
+      onMouseLeave={() => setShowScrollBar(false)}
+    >
+      <div
+        className={`overflow-y-auto pt-8 pb-12 pl-12 h-full ${
+          showScrollBar ? "custom-scrollbar" : "no-scrollbar"
+        }  `}
+      >
+        {" "}
         <p className="my-1 font-semibold">Birthdays</p>
         <div className="flex space-x-1.5">
           <Image

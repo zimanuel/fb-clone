@@ -7,7 +7,7 @@ import {
   setUploadedMedias,
 } from "@/app/store/slices/addpost";
 import Image from "next/image";
-import { ChangeEvent, useRef } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { BiSmile } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
 import Medias from "../post/common/medias";
@@ -16,7 +16,10 @@ import { FaPencilAlt } from "react-icons/fa";
 export default function PostModal() {
   const dispatch = useAppDispatch();
   const uploadedMedias = useAppSelector((state) => state.addPost.uploadedFiles);
+  const postContent = useAppSelector((state) => state.addPost.postContent);
+
   const input = useRef<HTMLInputElement>(null);
+  const [showScrollBar, setShowScrollBar] = useState<boolean>(false);
 
   const showFileChooser = () => {
     input.current?.click();
@@ -99,13 +102,23 @@ export default function PostModal() {
               </button>
             </div>
           </div>
-          <div className=" max-h-42 overflow-y-auto ">
+
+          <div
+            className={`max-h-42 overflow-y-auto transition-all duration-1000 ease-in-out  ${
+              showScrollBar
+                ? "custom-scrollbar-block"
+                : "custom-scrollbar-hidden no-scrollbar"
+            } `}
+            onMouseOver={() => setShowScrollBar(true)}
+            onMouseLeave={() => setShowScrollBar(false)}
+          >
             <textarea
               className={`block py-3 resize-none focus:outline-none w-full field-sizing-content  max-h-auto ${
                 uploadedMedias.length > 0 ? "min-h-10" : "min-h-24 "
               }`}
               placeholder="What on your mind, Amanuel?"
               onChange={onChangePostContent}
+              value={postContent}
             />
             {uploadedMedias.length > 0 && (
               <>
