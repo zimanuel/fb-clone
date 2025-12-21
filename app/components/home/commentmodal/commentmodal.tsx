@@ -56,7 +56,7 @@ export default function CommentModal() {
                   {replies.map((reply, index) => {
                     return (
                       <div className="relative" key={index}>
-                        <div className="w-10 h-7  border-l-2 border-b-2 border-b-gray-200 border-l-gray-200 absolute  rounded-bl-xl -top-2.5 left-0"></div>
+                        <div className="w-6.5 h-7  border-l-2 border-b-2 border-b-gray-200 border-l-gray-200 absolute  rounded-bl-xl -top-2.5 left-0"></div>
                         <div
                           className={`  inline-block  relative ${
                             index === replies.length - 1
@@ -64,7 +64,7 @@ export default function CommentModal() {
                               : "border-l-2 border-l-gray-200"
                           } `}
                         >
-                          <div className="flex  mb-2  space-x-3 w-auto relative left-7">
+                          <div className=" flex  mb-2  space-x-3 w-auto relative left-7">
                             <Image
                               alt="comment"
                               src={`/users/${index + 4}.jpg`}

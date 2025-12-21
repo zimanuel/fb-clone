@@ -8,7 +8,6 @@ import ToGroupSharePost from "./post/togroupsharepost/post";
 import OriginalUserPost from "./post/userpost/post";
 import UserSharePost from "./post/usersharepost/post";
 import PostModal from "./postmodal/postmodal";
-import CommentModal from "./commentmodal/commentmodal";
 
 export default function FeedsClient() {
   const isAddPostModalOpened = useAppSelector((state) => state.addPost.isOpen);
@@ -38,7 +37,7 @@ export default function FeedsClient() {
         <ToGroupSharePost />
       </div>
       {isAddPostModalOpened && <PostModal />}
-      <CommentModal />
+      {/* <CommentModal /> */}
     </>
   );
 }
