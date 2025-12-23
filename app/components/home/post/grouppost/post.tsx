@@ -9,7 +9,7 @@ export default function OriginalGroupPost() {
     <div className="w-full">
       <Header />
       <PostContent />
-      <div className="h-128">
+      <div className="h-128 mt-2">
         <Medias type="original" medias={medias} />
       </div>
       <Footer />

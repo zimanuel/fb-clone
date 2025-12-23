@@ -24,7 +24,7 @@ export default function Header() {
         <p className="font-semibold">Ethiopian Artists</p>
         <div className="flex space-x-1">
           <p>Amanuel Ferede</p>
-          <p>3hrs</p>
+          <p className="text-zinc-700 text-sm">December 16 at 9:40 PM</p>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function Header() {
       />
       <div className="flex flex-col">
         <p className="font-semibold">Amanuel Fered</p>
-        <p>3hrs</p>
+        <p className="text-zinc-700 text-sm">December 16 at 9:40 PM</p>
       </div>
     </div>
   );
