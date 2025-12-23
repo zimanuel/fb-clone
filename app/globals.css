@@ -33,6 +33,20 @@
    }
 }
 
+@keyframes moveUp {
+  from {
+    margin-bottom: -1.25rem; /* Start at 0px from the bottom */
+  }
+  to {
+    margin-bottom: initial; /* End at 150px from the bottom */
+  }
+}
+
+.reaction-emoji-animation {
+    animation: moveUp 0.3s ease-in-out ; /* Applies the animation */
+
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
