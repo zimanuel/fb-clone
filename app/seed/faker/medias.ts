@@ -1,22 +1,22 @@
 export const medias = [
   {
     type: "image",
-    url: "/users/3.jpg",
+    url: "/users/18.jpg",
     id: 0,
   },
   {
     type: "image",
-    url: "/users/13.jpg",
+    url: "/users/12.jpg",
     id: 1,
   },
   {
     type: "image",
-    url: "/users/23.jpg",
+    url: "/users/15.jpg",
     id: 2,
   },
   {
     type: "image",
-    url: "/users/33.jpg",
+    url: "/users/19.jpg",
     id: 3,
   },
 ];
