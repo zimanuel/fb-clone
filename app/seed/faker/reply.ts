@@ -10,3 +10,11 @@ export const replies = [
   "The leather jacked showed the scars of being his favorite for years. It wore those scars with pride, feeling that.",
   "Was it a whisper or was it the wind?.",
 ];
+
+export const _replies = replies.map((reply) => {
+  const hasReply = Math.floor(Math.random() * 2) + 1 === 1 ? true : false;
+  return {
+    reply: reply,
+    hasReply,
+  };
+});

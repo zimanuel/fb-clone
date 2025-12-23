@@ -3,7 +3,8 @@ import OriginalUserPost from "../post/userpost/post";
 import Image from "next/image";
 import { comments } from "@/app/seed/faker/comment";
 import { users } from "@/app/seed/faker/user";
-import { replies } from "@/app/seed/faker/reply";
+import { _replies } from "@/app/seed/faker/reply";
+import Replies from "./replies";
 
 export default function CommentModal() {
   return (
@@ -16,12 +17,12 @@ export default function CommentModal() {
         </div>
         <div className="max-h-93 overflow-y-auto custom-scrollbar m-0">
           <OriginalUserPost />
-          <div className="px-7 py-1">
+          <div className="pl-7 py-1 w-full">
             {comments.map((comment, index) => {
               return (
-                <div key={index} className="mb-6">
-                  <div className=" relative border-l-2 border-l-gray-200">
-                    <div className="flex pb-2  space-x-3 w-full relative -left-4">
+                <div key={index} className=" w-full relative mb-6">
+                  <div className={`border-l-2 border-l-gray-200 w-full `}>
+                    <div className="flex space-x-3 relative -left-4 -top-4">
                       <Image
                         alt="comment"
                         src={`/users/${index + 1}.jpg`}
@@ -37,7 +38,7 @@ export default function CommentModal() {
                           </p>
                           <p className="">{comment}</p>
                         </div>
-                        <div className="flex space-x-3 mt-2">
+                        <div className="flex space-x-3">
                           <p>3h</p>
                           <p>Like</p>
                           <p>Reply</p>
@@ -53,44 +54,7 @@ export default function CommentModal() {
                     </div>
                   </div>
 
-                  {replies.map((reply, index) => {
-                    return (
-                      <div className="relative" key={index}>
-                        <div className="w-6.5 h-7  border-l-2 border-b-2 border-b-gray-200 border-l-gray-200 absolute  rounded-bl-xl -top-2.5 left-0"></div>
-                        <div
-                          className={`  inline-block  relative ${
-                            index === replies.length - 1
-                              ? "border-0 border-l-transparent"
-                              : "border-l-2 border-l-gray-200"
-                          } `}
-                        >
-                          <div className=" flex  mb-2  space-x-3 w-auto relative left-7">
-                            <Image
-                              alt="comment"
-                              src={`/users/${index + 4}.jpg`}
-                              width={0}
-                              height={0}
-                              sizes="100vh"
-                              className="w-8 h-8 rounded-full flex-none"
-                            />
-                            <div className=" flex flex-col ">
-                              <div className="bg-gray-100 rounded-xl p-2.5">
-                                <p className="font-semibold">
-                                  {users[index + 2].name}
-                                </p>
-                                <p className="">{reply}</p>
-                              </div>
-                              <div className="flex space-x-3 mt-2">
-                                <p>3h</p>
-                                <p>Like</p>
-                                <p>Reply</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                  <Replies replies={_replies} />
                 </div>
               );
             })}
