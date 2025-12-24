@@ -1,6 +1,6 @@
 import PostContent from "../common/content";
+import Footer from "../common/footer";
 import SharedUserPost from "../shared/userpost";
-import Footer from "./footer";
 import Header from "./header";
 
 export default function UserSharePost() {

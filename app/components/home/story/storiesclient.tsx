@@ -61,14 +61,14 @@ export default function StoriesClient({
               <p className=" text-white text-sm  absolute bottom-3 left-3 z-20">
                 {story.user}
               </p>
-              <div className="w-full h-full relative">
+              <div className="max-w-30 h-52 relative">
                 <Image
                   src={story.pic}
                   width={0}
                   height={0}
                   sizes="100hv"
                   alt="story"
-                  className=" w-full h-full rounded-xl object-cover"
+                  className=" max-w-30 h-52 rounded-xl object-cover"
                 />
                 <div className="rounded-lg absolute top-0 left-0 right-0 bottom-0 bg-black/50 mask-t-from-5%"></div>
               </div>
