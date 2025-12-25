@@ -30,7 +30,7 @@ export default function AddPost() {
           width={0}
           height={0}
           sizes="100vh"
-          className=" w-9 h-9 rounded-full object-cover"
+          className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
         />
         <Image
           src={`/addpost/photos.png`}
@@ -38,7 +38,7 @@ export default function AddPost() {
           width={0}
           height={0}
           sizes="100vh"
-          className=" w-9 h-9 rounded-full object-cover"
+          className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
         />
         <Image
           src={`/addpost/happy.png`}
@@ -46,7 +46,7 @@ export default function AddPost() {
           width={0}
           height={0}
           sizes="100vh"
-          className=" w-9 h-9 rounded-full object-cover"
+          className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
         />
       </div>
     </div>

@@ -89,7 +89,7 @@ export default function PostModal() {
             />
             <div className="flex flex-col">
               <p className="font-semibold text-sm">Amanuel Ferede</p>
-              <button className="flex space-x-0.5 bg-gray-200 p-0.5 items-center justify-center rounded-md">
+              <button className="flex space-x-0.5 bg-gray-200 p-1 items-center justify-center rounded-md">
                 <Image
                   src={`/addpost/friends.png`}
                   alt="User"
@@ -150,13 +150,13 @@ export default function PostModal() {
                 <div
                   className={`w-9 h-9 rounded-lg bg-linear-to-tl bg-lime-500`}
                 ></div>
-                <BiSmile className="w-8 h-8 text-zinc-400" />
+                <BiSmile className="w-8 h-8 stroke-zinc-200 stroke-1" />
               </>
             )}
             {postContent.length > 150 && uploadedMedias.length === 0 && (
               <>
                 <div>{""}</div>
-                <BiSmile className="w-8 h-8 text-zinc-400" />
+                <BiSmile className="w-8 h-8 stroke-zinc-200 stroke-1 " />
               </>
             )}
           </div>
@@ -178,7 +178,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-8 h-8 cursor-pointer"
+                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full cursor-pointer"
               />
               <Image
                 src={`/addpost/tag.png`}
@@ -186,7 +186,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-8 h-8"
+                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full"
               />
               <Image
                 src={`/addpost/happy.png`}
@@ -194,7 +194,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-8 h-8"
+                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full"
               />
 
               <Image
@@ -203,7 +203,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-8 h-8"
+                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full"
               />
               <Image
                 src={`/addpost/gif.png`}
@@ -211,7 +211,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-8 h-8"
+                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full"
               />
             </div>
           </div>

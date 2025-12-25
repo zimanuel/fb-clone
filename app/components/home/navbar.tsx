@@ -69,7 +69,7 @@ export default function TopBar() {
         </div>
       </div>
 
-      <div className="md:hidden items-center space-x-2 flex">
+      <div className="md:flex items-center space-x-2 flex">
         <div className=" p-1 w-10 h-10  rounded-full bg-zinc-200 flex items-center justify-center">
           <Image
             alt="home"
