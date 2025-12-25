@@ -17,7 +17,7 @@ export default function Contacts() {
         }  `}
       >
         {" "}
-        <p className="my-1.5 font-semibold">Birthdays</p>
+        <p className="my-1.5 font-semibold text-zinc-500">Birthdays</p>
         <div className="flex space-x-1.5">
           <Image
             src={"/sidebar/gift.png"}
@@ -28,17 +28,18 @@ export default function Contacts() {
             className="w-7 h-7  object-cover"
           />
           <p className="">
-            <span className="font-semibold text-[0.96rem]">
+            <span className="font-semibold text-[0.96rem] font-stretch-semi-condensed">
               {" "}
               Amanuel Ferede
             </span>{" "}
-            and <span className="font-semibold text-[0.96rem]">
+            and{" "}
+            <span className="font-semibold text-[0.96rem] font-stretch-semi-condensed">
               3 others
             </span>{" "}
             have birthdays today
           </p>
         </div>
-        <p className="my-1 font-semibold">Contacts</p>
+        <p className="my-1 font-semibold text-zinc-500">Contacts</p>
         <div
           className="bg-zinc-100 opacity-35
 "
