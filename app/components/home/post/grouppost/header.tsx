@@ -21,10 +21,12 @@ export default function Header() {
         />
       </div>
       <div className="flex flex-col">
-        <p className="font-medium">Ethiopian Artists</p>
+        <p className="text-[0.99rem] font-semibold">Ethiopian Artists</p>
         <div className="flex space-x-1">
           <p>Amanuel Ferede</p>
-          <p className="text-zinc-700 text-sm">December 16 at 9:40 PM</p>
+          <p className=" text-zinc-500 text-[0.96rem] font-semibold">
+            December 16 at 9:40 PM
+          </p>
         </div>
       </div>
     </div>

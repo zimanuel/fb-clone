@@ -90,26 +90,26 @@ export default function Footer() {
             <Image
               alt="like"
               src={`/reactions/like.png`}
-              width={26}
-              height={26}
+              width={22}
+              height={22}
             />
             <Image
               alt="love"
               src={`/reactions/love.png`}
-              width={26}
-              height={26}
+              width={22}
+              height={22}
             />
             <Image
               alt="like"
               src={`/reactions/care.png`}
-              width={26}
-              height={26}
+              width={22}
+              height={22}
             />
           </div>
 
-          <p>Betty Alex and others</p>
+          <p className=" text-zinc-500 text-[0.99rem]">Betty Alex and others</p>
         </div>
-        <p>33 comments</p>
+        <p className=" text-zinc-500 text-[0.99rem]">33 comments</p>
       </div>
 
       <div className=" flex items-center justify-between px-2 pb-1.5">
@@ -119,7 +119,7 @@ export default function Footer() {
           onMouseLeave={hideReactionEmojies}
         >
           <Image alt="like" src={`/post/like.png`} width={20} height={20} />
-          <p>Like</p>
+          <p className="font-semibold text-zinc-500">Like</p>
         </div>
         <div className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50">
           <Image
@@ -129,7 +129,7 @@ export default function Footer() {
             height={20}
             className="object-cover"
           />
-          <p>Comment</p>
+          <p className="font-semibold text-zinc-500">Comment</p>
         </div>
         <div className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50">
           <Image
@@ -139,7 +139,7 @@ export default function Footer() {
             width={20}
             height={20}
           />
-          <p>Share</p>
+          <p className="font-semibold text-zinc-500">Share</p>
         </div>
       </div>
     </div>
