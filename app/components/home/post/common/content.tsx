@@ -1,7 +1,7 @@
 export default function PostContent() {
   return (
     <div className="px-3">
-      <p>
+      <p className="font-mono">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit
         debitis assumenda perferendis, earum consequuntur voluptatibus delectus
         totam quasi ipsam ipsa temporibus porro in magni fugiat illo culpa harum

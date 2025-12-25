@@ -27,8 +27,15 @@ export default function Contacts() {
             alt="story"
             className="w-7 h-7  object-cover"
           />
-          <p className="text-sm">
-            Amanuel Ferede and 3 others have birthdays today
+          <p className="">
+            <span className="font-semibold text-[0.96rem]">
+              {" "}
+              Amanuel Ferede
+            </span>{" "}
+            and <span className="font-semibold text-[0.96rem]">
+              3 others
+            </span>{" "}
+            have birthdays today
           </p>
         </div>
         <p className="my-1 font-semibold">Contacts</p>

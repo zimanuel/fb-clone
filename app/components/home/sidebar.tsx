@@ -29,7 +29,7 @@ export default function SideBar() {
               className="object-contain w-8 h-8"
             />
 
-            <p>{data.name}</p>
+            <p className="text-[0.98rem] font-medium">{data.name}</p>
           </div>
         ))}
       </div>
