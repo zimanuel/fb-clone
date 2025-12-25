@@ -22,7 +22,7 @@ export const sideBarData = [
   {
     id: 5,
     name: "Reels",
-    image: "/sidebar/video.png",
+    image: "/sidebar/reel.png",
   },
   {
     id: 6,
