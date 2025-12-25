@@ -7,12 +7,12 @@ export default function Contacts() {
 
   return (
     <div
-      className="md:w-[23.5%] w-full pt-12  h-full fixed top-0 right-0 bottom-0 z-30 "
+      className="md:w-[22%] w-full pt-12  h-full md:block hidden fixed top-0 right-0 bottom-0 z-30 "
       onMouseOver={() => setShowScrollBar(true)}
       onMouseLeave={() => setShowScrollBar(false)}
     >
       <div
-        className={`overflow-y-auto pt-8 pb-12 pl-12 h-full ${
+        className={`overflow-y-auto pt-8 pb-12 h-full ${
           showScrollBar ? "custom-scrollbar" : "custom-scrollbar-hidden"
         }  `}
       >
@@ -47,7 +47,7 @@ export default function Contacts() {
                 height={0}
                 sizes="100hv"
                 alt="story"
-                className="w-10 h-10 rounded-full object-cover border border-zinc-200 shadow-sm"
+                className="w-9 h-9 rounded-full object-cover border border-zinc-200 shadow-sm"
               />
               <p>{user.name}</p>
             </div>

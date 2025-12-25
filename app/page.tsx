@@ -3,7 +3,7 @@ import Feed from "./components/home/feed";
 import SideBar from "./components/home/sidebar";
 export default function Home() {
   return (
-    <div className="  font-sans min-h-screen flex space-x-20 bg-zinc-50">
+    <div className="  font-sans min-h-screen flex space-x-20 bg-slate-100">
       <SideBar />
       <Feed />
       <Contacts />

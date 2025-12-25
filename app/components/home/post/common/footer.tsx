@@ -19,7 +19,7 @@ export default function Footer() {
     settoShowReactionBox(true);
   };
   return (
-    <div className="relative bg-white">
+    <div className="relative">
       {toShowReactionBox && (
         <div
           className={`flex space-x h-auto bg-white shadow-sm rounded-3xl absolute left-2 bottom-11.5 `}

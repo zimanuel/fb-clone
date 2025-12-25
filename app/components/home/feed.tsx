@@ -8,7 +8,7 @@ import FeedsClient from "./feedclient";
 
 export default function Feed() {
   return (
-    <div className="md:w-[53%] md:ml-[23.5%] md:mr-[23.5%] mr-0 ml-0 w-full grow pl-10 py-20">
+    <div className="md:w-[50%]   md:ml-[24.5%] md:mr-[25.5%] mr-0 ml-0 w-full pt-18 mb-3">
       <AddPost />
       <Suspense fallback={<StorySkeleton />}>
         <Stories />

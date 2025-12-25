@@ -6,8 +6,8 @@ import Header from "../grouppost/header";
 export default function SharedPagePost() {
   return (
     <div className="w-full p-3">
-      <div className="border border-gray-300 rounded-xl">
-        <div className="h-128 rounded-xl">
+      <div className="border border-gray-300 rounded-xl pb-1.5 ">
+        <div className="h-128">
           <Medias type="share" medias={medias} />
         </div>
         <Header />

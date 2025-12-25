@@ -6,7 +6,7 @@ export default function SideBar() {
   const [showScrollBar, setShowScrollBar] = useState<boolean>(false);
   return (
     <div
-      className={`md:w-[23.5%] w-full pt-12  h-full fixed top-0 left-0 bottom-0 z-30 `}
+      className={`md:w-[22%] w-full pt-12  h-full fixed md:block hidden top-0 left-0 bottom-0 z-30 `}
       onMouseOver={() => setShowScrollBar(true)}
       onMouseLeave={() => setShowScrollBar(false)}
     >

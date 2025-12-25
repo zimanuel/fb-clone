@@ -3,16 +3,20 @@ import { CgSearch } from "react-icons/cg";
 
 export default function TopBar() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 shadow-md bg-white flex items-center justify-between space-x-3 py-2 px-3">
+    <div className="fixed top-0 left-0 right-0 z-40 shadow-sm bg-white flex items-center justify-between space-x-3 py-1 px-3">
       <div className="flex items-center space-x-2">
         <Image alt="Facebook" src={"/fb.png"} width={39} height={39} />
         <div className="p-2 flex grow items-center space-x-1.5 bg-zinc-100 rounded-4xl">
-          <CgSearch className="w-6 h-6 text-zinc-500" />
-          <input type="text" className="grow border-none focus:outline-none" />
+          <CgSearch className="w-5 h-5 text-zinc-500" />
+          <input
+            type="text"
+            className="grow border-none focus:outline-none"
+            placeholder="Search Facebook"
+          />
         </div>
       </div>
 
-      <div className="flex grow items-center space-x-6">
+      <div className="md:flex grow items-center space-x-6 hidden">
         <div className="px-10 py-1.5 text-center justify-center hover:bg-gray-100 rounded-lg">
           <Image
             alt="home"
@@ -65,7 +69,7 @@ export default function TopBar() {
         </div>
       </div>
 
-      <div className="flex items-center space-x-2">
+      <div className="md:hidden items-center space-x-2 flex">
         <div className=" p-1 w-10 h-10  rounded-full bg-zinc-200 flex items-center justify-center">
           <Image
             alt="home"
