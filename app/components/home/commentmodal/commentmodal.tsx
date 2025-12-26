@@ -1,10 +1,14 @@
+"use client";
 import { CgClose } from "react-icons/cg";
 import OriginalUserPost from "../post/userpost/post";
 import Image from "next/image";
 
 import Comments from "./comments";
+import { useState } from "react";
+import CommentsSkeleton from "../skeletons/comments";
 
 export default function CommentModal() {
+  const [isLoading] = useState<boolean>(true);
   return (
     <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-zinc-100/70">
       <div className="max-w-179 mx-auto mt-10 bg-white rounded-xl shadow-xl">
@@ -15,7 +19,9 @@ export default function CommentModal() {
         </div>
         <div className="max-h-93 overflow-y-auto custom-scrollbar m-0">
           <OriginalUserPost />
-          <Comments />
+          {isLoading && <CommentsSkeleton />}
+
+          {!isLoading && <Comments />}
         </div>
 
         <div className="pb-3 pt-4  px-4 flex items-center space-x-2">
