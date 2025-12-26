@@ -18,7 +18,6 @@ export default function StoriesClient({
   const settings = {
     dots: false,
     infinite: false,
-    variableWidth: true,
     slidesToShow: 5,
     slidesToScroll: 5,
     arrows: false,
@@ -32,7 +31,7 @@ export default function StoriesClient({
     sliderRef?.current?.slickPrev();
   };
   return (
-    <div className="relative">
+    <div className="relative my-slider-container">
       <MdNavigateNext
         onClick={handelNext}
         className="w-12 h-12 text-gray-400 flex items-center justify-center absolute top-1/2 right-4 z-10 bg-white outline outline-gray-500 cursor-pointer rounded-full p-2  hover:fill-200  transition duration-300 ease-out "
@@ -46,7 +45,7 @@ export default function StoriesClient({
         <Slider {...settings} ref={sliderRef}>
           {stories.map((story, index) => (
             <Link href={`/stories`} key={index}>
-              <div className="max-w-30 h-52  py-0 mx-[0.26rem] relative rounded-xl">
+              <div className=" relative rounded-xl">
                 <div className=" w-10 h-10 rounded-full border-4 border-blue-600 top-3 left-3 z-20 absolute">
                   <Image
                     src={story.pic}

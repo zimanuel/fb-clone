@@ -91,6 +91,10 @@ body {
 .custom-scrollbar-hidden {
    scrollbar-width: none
 }
+
+.my-slider-container .slick-slide {
+  @apply max-w-30 mx-1
+}
  
   
   

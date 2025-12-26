@@ -1,19 +1,44 @@
-import { Suspense } from "react";
-import StorySkeleton from "./skeletons/story";
+"use client";
 
-import Stories from "./story/stories";
-
-import AddPost from "./addpost/addpost";
-import FeedsClient from "./feedclient";
+import { useAppSelector } from "@/app/store/hooks";
+import OriginalGroupPost from "./post/grouppost/post";
+import OriginalPagePost from "./post/pagepost/post";
+import PageSharePost from "./post/pagesharepost/post";
+import ToGroupSharePost from "./post/togroupsharepost/post";
+import OriginalUserPost from "./post/userpost/post";
+import UserSharePost from "./post/usersharepost/post";
+import PostModal from "./postmodal/postmodal";
 
 export default function Feed() {
+  const isAddPostModalOpened = useAppSelector((state) => state.addPost.isOpen);
   return (
-    <div className="md:w-[50%]   md:ml-[24.5%] md:mr-[25.5%] mr-0 ml-0 w-full pt-18 mb-3">
-      <AddPost />
-      <Suspense fallback={<StorySkeleton />}>
-        <Stories />
-      </Suspense>
-      <FeedsClient />
-    </div>
+    <>
+      <div className="mt-3  bg-white md:rounded-xl shadow-sm">
+        <OriginalUserPost />
+      </div>
+
+      <div className="mt-3  bg-white md:rounded-xl shadow-sm">
+        <OriginalPagePost />
+      </div>
+
+      <div className="mt-3  bg-white md:rounded-xl shadow-sm">
+        <OriginalGroupPost />
+      </div>
+
+      <div className="mt-3  bg-white md:rounded-xl shadow-sm">
+        <UserSharePost />
+      </div>
+
+      <div className="mt-3  bg-white md:rounded-xl shadow-sm">
+        <PageSharePost />
+      </div>
+
+      <div className="mt-3  bg-white md:rounded-xl shadow-sm">
+        <ToGroupSharePost />
+      </div>
+      {isAddPostModalOpened && <PostModal />}
+      {/* <CommentModal /> */}
+      {/* <ReactionModal /> */}
+    </>
   );
 }

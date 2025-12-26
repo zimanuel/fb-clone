@@ -14,5 +14,5 @@ export default async function Stories() {
       resolve(stories);
     }, 5000);
   });
-  return _stories.length > 0 ? <StoriesClient stories={_stories} /> : null;
+  return <StoriesClient stories={_stories} />;
 }

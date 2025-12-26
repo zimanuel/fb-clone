@@ -2,6 +2,7 @@ import { CgClose, CgMore } from "react-icons/cg";
 import Image from "next/image";
 import { BiPause, BiPlus, BiVolumeMute, BiWorld } from "react-icons/bi";
 import { users } from "../seed/faker/user";
+import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 export default function Stories() {
   return (
     <div className="">
@@ -99,7 +100,8 @@ export default function Stories() {
               />
             </div>
           </div>
-
+          <MdNavigateNext className="w-12 h-12 text-gray-400 flex items-center justify-center absolute top-1/2 right-68 z-10 bg-white outline outline-gray-500 cursor-pointer rounded-full p-2  hover:fill-200  transition duration-300 ease-out " />
+          <MdNavigateBefore className="w-12 h-12 text-gray-400 flex items-center justify-center absolute top-1/2 left-68 z-10 bg-white outline outline-gray-500 cursor-pointer rounded-full p-2 hover:fill-200  transition duration-300 ease-out" />
           <div className="w-full h-[90%] flex items-center justify-center">
             <div className="w-80 rounded-xl  h-full  relative">
               <div className="absolute w-full px-2 top-3">
