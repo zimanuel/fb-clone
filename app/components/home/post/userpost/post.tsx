@@ -9,7 +9,7 @@ export default function OriginalUserPost() {
     <div className="w-full">
       <Header />
       <PostContent />
-      <div className="h-128 mt-2">
+      <div className="h-screen mt-2">
         <Medias type="original" medias={medias} />
       </div>
       <Footer />

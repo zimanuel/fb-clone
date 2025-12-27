@@ -3,13 +3,16 @@ import Image from "next/image";
 import { BiPause, BiPlus, BiVolumeMute, BiWorld } from "react-icons/bi";
 import { users } from "../seed/faker/user";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import Link from "next/link";
 export default function Stories() {
   return (
     <div className="">
       <div className="flex">
         <div className="w-[25%] bg-white h-full fixed top-0 left-0 bottom-0">
           <div className="flex space-x-3 px-3.5 py-2 border-b border-b-gray-200">
-            <CgClose className="bg-black/30 opacity-50 p-2 w-10 h-10 rounded-full" />
+            <Link href={`/`}>
+              <CgClose className="bg-black/30 opacity-50 p-2 w-10 h-10 rounded-full" />
+            </Link>
             <Image
               alt="Facebook"
               src={"/fb.png"}
@@ -38,17 +41,20 @@ export default function Stories() {
                 </div>
               </div>
               <p className="font-semibold text-[0.96rem]">All stories</p>
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-1.5">
                 {Array.from({ length: 8 }, (el, index) => {
                   return (
-                    <div key={index} className="flex space-x-2">
+                    <div
+                      key={index}
+                      className="flex space-x-2 hover:bg-gray-100 cursor-pointer px-2 py-2.5"
+                    >
                       <Image
                         alt="Facebook"
                         src={`${users[index].pic}`}
                         width={0}
                         height={0}
                         sizes="100vh"
-                        className="w-10 h-10 object-cover rounded-full"
+                        className="w-12.5 h-12.5 object-cover rounded-full border-2 border-blue-600"
                       />
                       <div className="flex flex-col">
                         <p className="text-[0.98rem]  font-normal">
@@ -152,7 +158,7 @@ export default function Stories() {
                     width={0}
                     height={0}
                     sizes="100vh"
-                    className="w-10 h-10"
+                    className="w-12 h-12"
                   />
                   <Image
                     alt="Facebook"
@@ -160,7 +166,7 @@ export default function Stories() {
                     width={0}
                     height={0}
                     sizes="100vh"
-                    className="w-10 h-10 stroke-white"
+                    className="w-12 h-12 stroke-white"
                   />
                   <Image
                     alt="Facebook"
@@ -168,7 +174,7 @@ export default function Stories() {
                     width={0}
                     height={0}
                     sizes="100vh"
-                    className="w-10 h-10"
+                    className="w-12 h-12"
                   />
                   <Image
                     alt="Facebook"
@@ -176,7 +182,7 @@ export default function Stories() {
                     width={0}
                     height={0}
                     sizes="100vh"
-                    className="w-10 h-10"
+                    className="w-12 h-12"
                   />
                   <Image
                     alt="Facebook"
@@ -184,7 +190,7 @@ export default function Stories() {
                     width={0}
                     height={0}
                     sizes="100vh"
-                    className="w-10 h-10"
+                    className="w-12 h-12"
                   />
                   <Image
                     alt="Facebook"
@@ -192,7 +198,7 @@ export default function Stories() {
                     width={0}
                     height={0}
                     sizes="100vh"
-                    className="w-10 h-10"
+                    className="w-12 h-12"
                   />
                   <Image
                     alt="Facebook"
@@ -200,7 +206,7 @@ export default function Stories() {
                     width={0}
                     height={0}
                     sizes="100vh"
-                    className="w-10 h-10"
+                    className="w-12 h-12"
                   />
                 </div>
               </div>

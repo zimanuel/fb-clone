@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export default function GridThree({
@@ -18,31 +19,38 @@ export default function GridThree({
   if (random === 0) {
     return (
       <div className="w-full h-full flex space-x-1">
-        <div
-          className={`w-[60%] h-full ${
-            type === "share" ? "rounded-tl-xl" : ""
-          }`}
-          style={{
-            backgroundImage: "url(" + `${medias[0].url}` + ")",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
+        <Link href={`/photo`} className="w-[60%] h-full block">
+          <div
+            className={`w-full h-full ${
+              type === "share" ? "rounded-tl-xl" : ""
+            }`}
+            style={{
+              backgroundImage: "url(" + `${medias[0].url}` + ")",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
+        </Link>
         <div className="w-[40%] h-full flex flex-col space-y-1">
           {medias.slice(1, medias.length).map((media, index) => {
             return (
-              <div
+              <Link
+                href={`/photo`}
+                className="w-full h-1/2 block"
                 key={media.id}
-                className={`h-1/2 grow ${
-                  type === "share" && index === 0 ? "rounded-tr-xl" : ""
-                }`}
-                style={{
-                  backgroundImage: "url(" + `${media.url}` + ")",
-                  backgroundPosition: "top center",
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                }}
-              ></div>
+              >
+                <div
+                  className={`h-full grow ${
+                    type === "share" && index === 0 ? "rounded-tr-xl" : ""
+                  }`}
+                  style={{
+                    backgroundImage: "url(" + `${media.url}` + ")",
+                    backgroundPosition: "top center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+              </Link>
             );
           })}
         </div>
@@ -52,30 +60,37 @@ export default function GridThree({
 
   return (
     <div className="w-full h-full flex flex-col space-y-1">
-      <div
-        className={`h-1/2 w-full ${
-          type === "share" ? "rounded-tl-xl rounded-tr-xl" : ""
-        }`}
-        style={{
-          backgroundImage: "url(" + `${medias[0].url}` + ")",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      ></div>
+      <Link href={`/photo`} className="w-full h-1/2 block">
+        <div
+          className={`h-full w-full ${
+            type === "share" ? "rounded-tl-xl rounded-tr-xl" : ""
+          }`}
+          style={{
+            backgroundImage: "url(" + `${medias[0].url}` + ")",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
+      </Link>
       <div className="h-1/2 w-full flex space-x-1">
         {medias.slice(1, medias.length).map((media) => {
           return (
-            <div
+            <Link
+              href={`/photo`}
+              className="w-full h-full block"
               key={media.id}
-              className={`h-full grow`}
-              style={{
-                backgroundImage: "url(" + `${media.url}` + ")",
-                backgroundPosition: "top center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
+            >
+              <div
+                className={`h-full grow`}
+                style={{
+                  backgroundImage: "url(" + `${media.url}` + ")",
+                  backgroundPosition: "top center",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div>
+            </Link>
           );
         })}
       </div>
