@@ -15,6 +15,17 @@ export default function SideBar() {
           showScrollBar ? "custom-scrollbar" : "custom-scrollbar-hidden"
         }  `}
       >
+        <div className="flex items-center space-x-2.5 pl-2">
+          <Image
+            alt="Facebook"
+            src={`/users/18.jpg`}
+            width={0}
+            height={0}
+            sizes="100vh"
+            className="object-cover w-9 h-9 rounded-full"
+          />
+          <p className="font-medium">Amanuel Ferede</p>
+        </div>
         {sideBarData.map((data, index) => (
           <div
             key={index}
