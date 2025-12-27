@@ -140,7 +140,7 @@ export default function TopBar() {
                       sizes="100vh"
                       className="object-cover w-9 h-9 rounded-full"
                     />
-                    <p className="font-medium">Amanuel Ferede</p>
+                    <p className="font-semibold">Amanuel Ferede</p>
                   </div>
                   <Link
                     href={`#`}
