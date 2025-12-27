@@ -115,7 +115,7 @@ export default function TopBar() {
           />
         </div>
 
-        <div className="w-10 h-10 relative rounded-full  bg-amber-300">
+        <div className="w-10 h-10 relative rounded-full">
           <div onClick={showProfileSettings} className="cursor-pointer">
             <Image
               alt="home"
