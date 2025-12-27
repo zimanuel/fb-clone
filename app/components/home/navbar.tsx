@@ -13,7 +13,7 @@ export default function TopBar() {
     useState<boolean>(false);
 
   const showProfileSettings = () => {
-    setShouldProfileSettings(true);
+    setShouldProfileSettings(!shouldShowProfileSettings);
   };
   return (
     <div className="fixed top-0 left-0 right-0 z-40 shadow-sm bg-white flex items-center justify-between space-x-3 py-1 px-3">
