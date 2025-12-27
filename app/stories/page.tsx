@@ -8,8 +8,8 @@ export default function Stories() {
   return (
     <div className="">
       <div className="flex">
-        <div className="w-[25%] bg-white h-full fixed top-0 left-0 bottom-0">
-          <div className="flex space-x-3 px-3.5 py-2 border-b border-b-gray-200">
+        <div className="w-[27%]  h-full fixed top-0 left-0 bottom-0">
+          <div className="flex w-full space-x-3 px-3.5 py-2 border-b border-b-gray-200">
             <Link href={`/`}>
               <CgClose className="bg-black/30 opacity-50 p-2 w-10 h-10 rounded-full" />
             </Link>
@@ -23,7 +23,7 @@ export default function Stories() {
             />
           </div>
 
-          <div className="overflow-y-auto custom-scrollbar h-full">
+          <div className="overflow-y-auto w-full  h-full">
             <div className="flex flex-col space-y-2 px-3.5 py-2">
               <p className="text-xl font-semibold">Stories</p>
               <div className="flex space-x-2">
@@ -41,12 +41,14 @@ export default function Stories() {
                 </div>
               </div>
               <p className="font-semibold text-[0.96rem]">All stories</p>
-              <div className="flex flex-col space-y-1.5">
+              <div className="flex flex-col">
                 {Array.from({ length: 8 }, (el, index) => {
                   return (
                     <div
                       key={index}
-                      className="flex space-x-2 hover:bg-gray-100 cursor-pointer px-2 py-2.5"
+                      className={`flex space-x-2 hover:bg-gray-100 cursor-pointer px-2 py-2.5 ${
+                        index === 0 ? "bg-gray-100" : ""
+                      }`}
                     >
                       <Image
                         alt="Facebook"
@@ -54,10 +56,10 @@ export default function Stories() {
                         width={0}
                         height={0}
                         sizes="100vh"
-                        className="w-12.5 h-12.5 object-cover rounded-full border-2 border-blue-600"
+                        className="w-15 h-15 object-cover rounded-full border-2 border-blue-600 p-1"
                       />
                       <div className="flex flex-col">
-                        <p className="text-[0.98rem]  font-normal">
+                        <p className="text-[0.91rem]  font-semibold">
                           {users[index].name}
                         </p>
                         <div className="flex space-x-2">
@@ -72,7 +74,7 @@ export default function Stories() {
             </div>
           </div>
         </div>
-        <div className="w-[85%] h-screen py-3 grow ml-[25%] bg-black relative ">
+        <div className="w-[73%] h-screen py-3 grow ml-[27%] bg-black relative ">
           <div className="md:flex items-center space-x-2 flex absolute top-2 right-2">
             <div className=" p-1 w-10 h-10  rounded-full bg-zinc-200 flex items-center justify-center">
               <Image

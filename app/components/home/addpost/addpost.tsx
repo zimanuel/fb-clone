@@ -8,7 +8,7 @@ export default function AddPost() {
     dispatch(openAddPostModal(true));
   };
   return (
-    <div className="bg-white rounded-lg shadow-md mb-2.5 py-2 px-2.5 flex items-center space-x-3 justify-between">
+    <div className="bg-white rounded-lg shadow-md mb-2.5 p-3 flex items-center space-x-3 justify-between">
       <Image
         src={`/users/14.jpg`}
         alt="Amanuel Fered"
